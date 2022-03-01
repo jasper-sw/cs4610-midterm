@@ -13,4 +13,16 @@ export class TodosService {
   findAll() {
     return this.todosRepository.find();
   }
+
+  create(todo: Todo) {
+    return this.todosRepository.save(todo);
+  }
+
+  findById(targetId: number) {
+    return this.todosRepository.find({where: {id: targetId}});
+  }
+
+  toggleCompleteFromId(targetId: number, targetStatus: boolean) {
+    return this.todosRepository.update({id: targetId}, {isComplete: targetStatus});
+  }
 }

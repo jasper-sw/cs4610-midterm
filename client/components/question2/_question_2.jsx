@@ -1,3 +1,6 @@
+import User from "./User";
+
+
 export const Question2 = () => {
   const users = [
     { id: 1, name: 'Abby Zollinger', email: 'abby@usu.edu', isAdmin: true },
@@ -9,5 +12,15 @@ export const Question2 = () => {
     { id: 7, name: 'Gerald Truman', email: 'gerald@usu.edu', isAdmin: false },
     { id: 8, name: 'Harry Styles', email: 'harry@usu.edu', isAdmin: false },
   ];
-  return <div>Render your users here!</div>;
+  return (
+  <div>Render your users here!
+    {users.map(function(user, i){
+            return (
+            <div key={i} style={{backgroundColor: "white"}}>
+                <User user={user}/>
+            </div>
+            )
+        })}
+  </div>
+  );
 };

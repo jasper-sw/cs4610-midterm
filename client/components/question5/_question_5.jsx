@@ -13,6 +13,16 @@ export const Question5 = () => {
   }, []);
 
   const save = async () => {
+    //console.log("hit save")
+    //console.log("POST /todos?content=" + content)
+    const newTodo = await api.post('/todos' + content)
+    //console.log("created todo: ", newTodo)
+    oldTodos = todos;
+    oldTodos.push(newTodo);
+    setTodos([]);
+    setTodos(oldTodos);
+    //setTodos(todos.push(newTodo));
+
     // make the api call to save a todo here.
     // remember to add the newly created todo item to the list of
     // todos with the setTodos method.

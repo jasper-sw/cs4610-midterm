@@ -10,6 +10,11 @@ export const Todo = ({ todo }) => {
     // you wont actually need to do anything with the result of the API call
     // because we are optimistically updating the state.
     // When you refresh the page you should see your state persist.
+    const id = todo.id;
+    //console.log("Todo ID: ", id)
+    //console.log("todo.jsx posts: ", '/todos/toggleComplete?=' + id)
+    const test = await api.post('/todos/toggle' + id)
+    //console.log("todo.jsx posts: ", '/todos/toggleComplete?=' + id)
   };
 
   return (
